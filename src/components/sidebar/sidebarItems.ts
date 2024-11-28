@@ -1,4 +1,4 @@
-import {CalendarFold, Church, LayoutGrid, LucideIcon, Menu, UsersRound} from "lucide-react";
+import {CalendarFold, Church, LayoutGrid, LucideIcon, UsersRound} from "lucide-react";
 
 export type SidebarItemsType ={
     title: string,

@@ -1,6 +1,5 @@
 'use client'
 
-import {poppins} from "@/fonts/fonts";
 
 import {FormItem, Form, FormLabel, FormControl, FormField, FormMessage} from "@/components/ui/form";
 import {z} from "zod";
@@ -14,10 +13,6 @@ import Image from "next/image";
 import {useState} from "react";
 import Link from "next/link";
 import {useRouter} from 'next/navigation'
-
-import bgImg from '../../public/assets/auth/authentication.svg'
-import logo from '../../public/assets/dorea_logo.png'
-
 
 const schema = z.object({
     email: z.string(),

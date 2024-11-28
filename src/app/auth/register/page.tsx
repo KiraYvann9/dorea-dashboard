@@ -1,6 +1,5 @@
 'use client'
 
-import {poppins} from "@/fonts/fonts";
 
 import {FormItem, Form, FormLabel, FormControl, FormField, FormMessage} from "@/components/ui/form";
 import {z} from "zod";
@@ -11,7 +10,6 @@ import {Button} from "@/components/ui/button";
 import {Eye, EyeClosed, Mail} from "lucide-react";
 import Image from "next/image";
 
-import bgImg from '../../../../public/assets/auth/authentication.svg'
 import {useState} from "react";
 import Link from "next/link";
 
