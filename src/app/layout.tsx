@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import {geistSans, geistMono, poppins} from "@/fonts/fonts";
+import {geistSans, geistMono} from "@/fonts/fonts";
 import Image from "next/image";
 import bgImg from "../../public/assets/auth/authentication.svg";
 
