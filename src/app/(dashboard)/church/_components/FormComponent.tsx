@@ -13,6 +13,7 @@ const schema = z.object({
     name: z.string(),
     location: z.string(),
     description: z.string(),
+    commune: z.string(),
 
 })
 
@@ -24,6 +25,7 @@ export const FormComponents = () =>{
             name: '',
             location: '',
             description: '',
+            commune: ''
         }
     });
 
@@ -38,15 +40,23 @@ export const FormComponents = () =>{
                     <FormItem>
                         <FormLabel className={'text-muted-foreground'}>Nom de l'église <span className={'text-red-500'}>*</span> </FormLabel>
                         <FormControl>
-                            <Input className={'border border-purple-300'} type={'text'} {...field}/>
+                            <Input className={'border border-purple-300 h-12 text-xl'} type={'text'} placeholder={'Nom de l\'église '} {...field}/>
                         </FormControl>
                     </FormItem>
                 )} name={'name'} control={form.control}/>
                 <FormField render={({field})=>(
                     <FormItem>
+                        <FormLabel className={'text-muted-foreground'}>Commune <span className={'text-red-500'}>*</span> </FormLabel>
+                        <FormControl>
+                            <Input className={'border border-purple-300 h-12'} type={'text'} placeholder={'Commune'} {...field}/>
+                        </FormControl>
+                    </FormItem>
+                )} name={'commune'} control={form.control}/>
+                <FormField render={({field})=>(
+                    <FormItem>
                         <FormLabel className={'text-muted-foreground'}>Adresse <span className={'text-red-500'}>*</span> </FormLabel>
                         <FormControl>
-                            <Input className={'border border-purple-300'} type={'text'} {...field}/>
+                            <Input className={'border border-purple-300 h-12'} type={'text'} placeholder={'adresse'} {...field}/>
                         </FormControl>
                     </FormItem>
                 )} name={'location'} control={form.control}/>
@@ -54,12 +64,12 @@ export const FormComponents = () =>{
                     <FormItem className={'flex-1'}>
                         <FormLabel className={'text-muted-foreground'}>Description <span className={'text-red-500'}>*</span> </FormLabel>
                         <FormControl>
-                            <Input className={'border border-purple-300'} type={'text'} {...field}/>
+                            <Input className={'border border-purple-300 h-12'} type={'text'} placeholder={'description'} {...field}/>
                         </FormControl>
                     </FormItem>
                 )} name={'description'} control={form.control}/>
 
-                <Button variant="default" type="submit" className={'w-full sm:w-auto'} title={'add church button'}> <Plus/> Enregistrer</Button>
+                <Button variant="default" type="submit" className={'w-full sm:w-auto h-12 flex items-center'} title={'add church button'}> <Plus/> Enregistrer</Button>
             </form>
 
         </Form>

@@ -1,6 +1,5 @@
 'use client'
 
-
 import {FormItem, Form, FormLabel, FormControl, FormField, FormMessage} from "@/components/ui/form";
 import {z} from "zod";
 import {useForm} from "react-hook-form";
@@ -12,6 +11,7 @@ import Image from "next/image";
 
 import {useState} from "react";
 import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 const schema = z.object({
     email: z.string(),
@@ -21,6 +21,8 @@ const schema = z.object({
 
 
 export default function Home() {
+
+    const router = useRouter()
 
     const form = useForm({
         resolver: zodResolver(schema),
@@ -105,7 +107,7 @@ export default function Home() {
                         )} name={'confirmPassword'} control={form.control}/>
                     </div>
 
-                    <Button className={'h-14 w-full'} title={'resgisteur button'}> S'enregistrer </Button>
+                    <Button className={'h-14 w-full'} title={'resgisteur button'} onClick={()=>router.push('/auth/verify')}> S'enregistrer </Button>
 
                     <div className={'w-full flex justify-center items-center relative'}>
                         <div className={'w-full h-[.3px] bg-gray-200'}></div>

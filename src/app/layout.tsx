@@ -4,6 +4,7 @@ import "./globals.css";
 import {geistSans, geistMono} from "@/fonts/fonts";
 import Image from "next/image";
 import bgImg from "../../public/assets/auth/authentication.svg";
+import ReactQueryClientProvider from "@/components/ReactQueryClientProvider";
 
 export const metadata: Metadata = {
     manifest: '/manifest.json',
@@ -24,12 +25,14 @@ export default function RootLayout({
     <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-    <div className={`w-full flex`}>
-      {children}
-      <div className={'flex-1 hidden w-full min-h-screen sm:flex justify-center items-center bg-purple-100'}>
-        <Image src={bgImg} alt={''} className={'w-full'}/>
+    <ReactQueryClientProvider>
+      <div className={`w-full flex`}>
+        {children}
+        <div className={'flex-1 hidden w-full min-h-screen sm:flex justify-center items-center bg-purple-100'}>
+          <Image src={bgImg} alt={''} className={'w-full'}/>
+        </div>
       </div>
-    </div>
+    </ReactQueryClientProvider>
     </body>
     </html>
 );
