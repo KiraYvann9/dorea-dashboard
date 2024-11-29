@@ -25,12 +25,12 @@ export const MobileMenu = () =>{
             </SheetTrigger>
             <SheetContent side={'left'} className={'w-[60%]'}>
                 <SheetHeader className={'flex flex-col gap-8'}>
-                    <SheetTitle className={'text-2xl font-bold flex items-center gap-2'}> <Image src={'/assets/dorea_logo.png'}
-                                                                         alt={'logo'} width={40}
-                                                                         height={40}/> Dorea</SheetTitle>
+                    <SheetTitle className={'text-2xl font-bold flex items-center gap-2'}>
+                        <Image src={'/assets/dorea_logo.png'} alt={'logo'} width={132} height={40}/>
+                    </SheetTitle>
                     <SheetDescription className={'mt-6 flex flex-col gap-4'}>
                         {sidebarItems.map((item: SidebarItemsType, index) => (
-                            <Link key={index} href={item.href} className={cn('flex gap-3 p-2 border-transparent', pathname===item.href && 'text-purple-700 border rounded-md border-purple-500 bg-purple-100')}>
+                            <Link key={index} href={item.href} className={cn('flex gap-3 p-2 border-transparent', pathname===item.href && 'text-orange-700 border rounded-md border-orange-500 bg-orange-100')}>
                                 <item.icon/> {item.title}
                             </Link>
                         ))}

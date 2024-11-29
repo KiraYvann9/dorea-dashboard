@@ -41,9 +41,7 @@ export default function Home() {
 
     return (
         <div className={'min-h-screen w-full sm:w-[60%] flex flex-col justify-center items-center gap-4'}>
-            <h1 className={'text-4xl font-bold flex gap-3 items-center'}><Image src={'/assets/dorea_logo.png'}
-                                                                                alt={'logo'} width={70}
-                                                                                height={70}/> DOREA</h1>
+            <Image src={'/assets/dorea_logo.png'} alt={'logo'} width={235} height={70}/>
             <h2 className={'text-2xl font-medium text-gray-600'}>Créer un compte</h2>
 
             <Form {...form}>
@@ -124,7 +122,7 @@ export default function Home() {
                             <span>Apple</span>
                         </Button>
                     </div>
-                    <p>Vous avez déjà un compte ? <Link href={'/'} className={'text-purple-700'}>Connectez
+                    <p>Vous avez déjà un compte ? <Link href={'/'} className={'text-orange-700'}>Connectez
                         vous</Link></p>
                 </form>
             </Form>

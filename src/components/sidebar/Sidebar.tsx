@@ -40,13 +40,11 @@ export const Sidebar = ()=> {
     return (
         <ul className={`py-4 px-8 w-full flex justify-between items-center bg-white border-b`}>
             <div className={`hidden ${poppins.variable} sm:flex gap-10 items-center`}>
-                <h1 className={'text-2xl font-bold flex gap-3 items-center'}><Image src={'/assets/dorea_logo.png'}
-                                                                                    alt={'logo'} width={40}
-                                                                                    height={40}/> DOREA</h1>
+                <Image src={'/assets/dorea_logo.png'} alt={'logo'} width={132} height={40}/>
                 {sidebarItems.map((item: SidebarItemsType, index) => (
                     <li key={index}>
                         <Link href={item.href}
-                              className={cn('flex gap-3', pathname === item.href && 'text-purple-700')}>
+                              className={cn('flex gap-3', pathname === item.href && 'text-orange-700')}>
                             <item.icon/>
                             {item.title}
                         </Link>

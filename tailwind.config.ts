@@ -49,7 +49,17 @@ export default {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+			custom_orange: {
+				  primary: '#CC3C1F',
+				  secondary: '#F7931E',
+				  third: '#FCBF49',
+				  fourth: '#EAE2B7',
+				  fifth: '#F2EEDD',
+			},
+			custom_bg: {
+				  default: '#FAFBFC'
+			}
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

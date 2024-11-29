@@ -50,9 +50,7 @@ export default function Page() {
 
     return (
         <div className={'min-h-screen w-full sm:w-[60%] flex flex-col justify-center items-center gap-8 p-4'}>
-            <h1 className={'text-4xl font-bold flex gap-3 items-center'}><Image src={'/assets/dorea_logo.png'}
-                                                                                alt={'logo'} width={70}
-                                                                                height={70}/> DOREA</h1>
+            <Image src={'/assets/dorea_logo.png'} alt={'logo'} width={235} height={70}/>
             <h1 className="text-2xl sm:text-3xl font-bold text-center">Vérification de l'adresse e-mail</h1>
 
             {
@@ -82,20 +80,20 @@ export default function Page() {
                                             <InputOTP maxLength={6} {...field}>
                                                 <InputOTPGroup>
                                                     <InputOTPSlot index={0}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={1}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={2}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                 </InputOTPGroup>
-                                                <InputOTPSeparator className="text-purple-700"/>
+                                                <InputOTPSeparator className="text-orange-700"/>
                                                 <InputOTPGroup>
                                                     <InputOTPSlot index={3}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={4}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={5}
-                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-purple-500"/>
+                                                                  className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                 </InputOTPGroup>
                                             </InputOTP>
                                         </FormControl>
