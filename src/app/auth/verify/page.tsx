@@ -28,11 +28,13 @@ export default function Page() {
     })
 
     const sendOTP = async()=>{
-        const response = await axios.get('')
+        const response = await axios.get('');
+        console.log(response)
     }
 
     const resendOTP = async()=>{
         const response = await axios.get('')
+        console.log(response)
     }
 
     const mutation = useMutation({
