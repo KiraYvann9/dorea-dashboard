@@ -9,7 +9,6 @@ import {Button} from "@/components/ui/button";
 import axios from "axios";
 import {useMutation} from "@tanstack/react-query";
 import Image from "next/image";
-import SuccefullyProcessCard from "@/app/auth/verify/_components/SuccesfullyProcessCard";
 import SuccesfullyProcessCard from "@/app/auth/verify/_components/SuccesfullyProcessCard";
 import {useState} from "react";
 
