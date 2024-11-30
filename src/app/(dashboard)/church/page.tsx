@@ -5,7 +5,7 @@ import {TableColumns} from "@/app/(dashboard)/church/_components/data-table-colu
 export default function Dashboard() {
     return(
         <div className={'flex flex-col gap-y-4'}>
-            <h1 className={'text-4xl font-black text-gray-700'}>Eglises</h1>
+            <h1 className={'text-3xl font-semibold text-gray-700'}>Eglises</h1>
 
             <div className={'w-full border rounded-md bg-white p-4'}>
                 <FormComponents/>

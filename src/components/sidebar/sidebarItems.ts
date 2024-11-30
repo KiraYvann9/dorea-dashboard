@@ -17,9 +17,9 @@ export const sidebarItems : SidebarItemsType[] = [
         href: '/church',
     },
     {
-        title: 'Membres',
+        title: 'Equipes',
         icon: UsersRound,
-        href: '/members',
+        href: '/teams',
     },
     {
         title: 'Evènements',

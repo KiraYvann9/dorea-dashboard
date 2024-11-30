@@ -78,7 +78,7 @@ export default function Page() {
                                     <FormItem>
                                         <FormControl>
                                             <InputOTP maxLength={6} {...field}>
-                                                <InputOTPGroup>
+                                                <InputOTPGroup className={'space-x-1'}>
                                                     <InputOTPSlot index={0}
                                                                   className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={1}
@@ -87,7 +87,7 @@ export default function Page() {
                                                                   className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                 </InputOTPGroup>
                                                 <InputOTPSeparator className="text-orange-700"/>
-                                                <InputOTPGroup>
+                                                <InputOTPGroup className={'space-x-1'}>
                                                     <InputOTPSlot index={3}
                                                                   className="w-14 sm:w-20 h-14 bg-white text-3xl text-gray-900 font-semibold border border-orange-500"/>
                                                     <InputOTPSlot index={4}

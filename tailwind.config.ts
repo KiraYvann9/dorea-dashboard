@@ -50,6 +50,7 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
+			custom_dark: '#003049',
 			custom_orange: {
 				  primary: '#CC3C1F',
 				  secondary: '#F7931E',
