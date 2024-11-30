@@ -1,4 +1,4 @@
-import {CalendarFold, Church, LayoutGrid, LucideIcon, UsersRound} from "lucide-react";
+import {CalendarFold, Church, LayoutGrid, LucideIcon, UserRound, UsersRound} from "lucide-react";
 
 export type SidebarItemsType ={
     title: string,
@@ -20,6 +20,11 @@ export const sidebarItems : SidebarItemsType[] = [
         title: 'Equipes',
         icon: UsersRound,
         href: '/teams',
+    },
+    {
+        title: 'Membres',
+        icon: UserRound,
+        href: '/members',
     },
     {
         title: 'Evènements',
