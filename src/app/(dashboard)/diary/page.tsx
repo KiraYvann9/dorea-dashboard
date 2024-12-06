@@ -25,9 +25,10 @@ export default function Dashboard() {
     const [date, setDate] = React.useState<Date | undefined>(new Date())
 
     const [currentDate, setCurrentDate] = useState(new Date())
+
     const [events, setEvents] = useState<Event[]>([
-        { id: '1', title: 'Réunion', start: new Date(2023, 5, 15, 10), end: new Date(2023, 5, 15, 11) },
-        { id: '2', title: 'Déjeuner', start: new Date(2023, 5, 16, 12), end: new Date(2023, 5, 16, 13) },
+        { id: '1', title: 'Réunion', start: new Date(2024, 12, 2, 5), end: new Date(2024, 12, 3, 5) },
+        { id: '2', title: 'Déjeuner', start: new Date(2024, 12, 4, 12), end: new Date(2024, 12, 5, 13) },
     ])
 
     const startDate = startOfWeek(currentDate, { weekStartsOn: 1 })
@@ -54,12 +55,12 @@ export default function Dashboard() {
                 </div>
 
                 <Calendar
+                    locale={fr}
                     mode="single"
                     selected={date}
                     onSelect={setDate}
                     className="rounded-md"
                 />
-
 
                 <Accordion type="single" collapsible >
                     <AccordionItem value="item-1">
@@ -83,25 +84,26 @@ export default function Dashboard() {
                 </Accordion>
             </section>
 
-
             <Card className="flex-1 rounded-none border-y-0">
-
                 <CardHeader className={'flex flex-row items-center w-full'}>
+
                     <CardTitle className="text-3xl font-bold capitalize">
                         {format(Date.now(), 'MMMM y', { locale: fr })}
                     </CardTitle>
+
                     <div className="flex gap-4">
                         <Button onClick={previousWeek} variant={'ghost'} > <ChevronLeft size={22}/> </Button>
                         <Button onClick={nextWeek} variant={'ghost'} > <ChevronRight size={22}/> </Button>
                     </div>
 
                     <AddEvent/>
+
                 </CardHeader>
 
                 <CardContent>
                     <div className="grid grid-cols-7 border-t border-l">
                         {days.map((day, index) => (
-                            <div key={index} className="text-center font-semibold border-r border-b p-2">
+                            <div key={index} className="text-center text-white font-semibold border-r border-b p-2 bg-custom_dark">
                                 {format(day, 'EEEE', { locale: fr })}
                                 <br />
                                 {format(day, 'd', { locale: fr })}
@@ -112,8 +114,8 @@ export default function Dashboard() {
                                 {days.map((day, dayIndex) => {
                                     const eventsForDay = getEventsForDay(day)
                                     return (
-                                        <div key={dayIndex} className="border-r border-b relative h-12">
-                                            {eventsForDay.map((event) => {
+                                        <div key={dayIndex} className="border-r border-b border-custom_dark relative h-12">
+                                            {eventsForDay.map((event: any) => {
                                                 if (event.start.getHours() === hour) {
                                                     return (
                                                         <div
@@ -121,7 +123,7 @@ export default function Dashboard() {
                                                             className="absolute w-full bg-blue-200 p-1 text-xs overflow-hidden border-t border-blue-300"
                                                             style={{
                                                                 top: `${(event.start.getMinutes() / 60) * 100}%`,
-                                                                height: `${((event.end.getTime() - event.start.getTime()) / (1000 * 60 * 60)) * 100}%`,
+                                                                //height: `${((event.end.getTime() - event.start.getTime()) / (1000 * 60 * 60)) * 100}%`,
                                                                 zIndex: 10
                                                             }}
                                                         >
@@ -138,7 +140,6 @@ export default function Dashboard() {
                         ))}
                     </div>
                 </CardContent>
-
             </Card>
 
 

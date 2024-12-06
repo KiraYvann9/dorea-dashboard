@@ -2,6 +2,7 @@
 
 import {useState} from "react";
 import { format } from "date-fns";
+import { fr } from 'date-fns/locale'
 import { Calendar as CalendarIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -87,11 +88,12 @@ export function AddEvent() {
                                     )}
                                 >
                                     <CalendarIcon className="mr-2 h-4 w-4"/>
-                                    {date ? format(date, "PPP") : <span>Pick a date</span>}
+                                    {date ? format(date, "PPP", {locale: fr}) : <span>Pick a date</span>}
                                 </Button>
                             </PopoverTrigger>
                             <PopoverContent className="w-auto p-0">
                                 <Calendar
+                                    locale={fr}
                                     mode="single"
                                     selected={date}
                                     onSelect={setDate}
@@ -112,11 +114,12 @@ export function AddEvent() {
                                     )}
                                 >
                                     <CalendarIcon className="mr-2 h-4 w-4"/>
-                                    {date ? format(date, "PPP") : <span>Pick a date</span>}
+                                    {date ? format(date, "PPP", {locale: fr}) : <span>Pick a date</span>}
                                 </Button>
                             </PopoverTrigger>
                             <PopoverContent className="w-auto p-0">
                                 <Calendar
+                                    locale={fr}
                                     mode="single"
                                     selected={date}
                                     onSelect={setDate}
