@@ -14,6 +14,9 @@ import {useState} from "react";
 import Link from "next/link";
 import {useRouter} from 'next/navigation'
 
+import {useUserStore} from "@/stores/useUserStore";
+import {useMutation} from "@tanstack/react-query";
+
 const schema = z.object({
     email: z.string(),
     password: z.string(),
@@ -21,7 +24,7 @@ const schema = z.object({
 
 
 export default function Home() {
-
+    const login = useUserStore(s => s.login)
     const form = useForm({
         resolver: zodResolver(schema),
         defaultValues: {
@@ -33,8 +36,18 @@ export default function Home() {
     const [showPWD, setShowPWD] = useState<boolean>(false)
     const router = useRouter()
 
-    const submit = () =>{
+    const mutation = useMutation({
+        mutationFn: (data: z.infer<typeof schema>) =>login(data),
+        onSuccess: (data)=>{
+            console.log('user ', data)
+        },
+        onError: (error) =>{
+            console.log(error)
+        }
+    })
 
+    const submit = (data: z.infer<typeof schema>) =>{
+        mutation.mutate(data)
     }
 
   return (
@@ -78,7 +91,7 @@ export default function Home() {
                         )} name={'password'} control={form.control}/>
                     </div>
 
-                    <Button className={'h-14 w-full'} onClick={()=>router.push('/dashboard')} title={'login button'}> Se Connecter</Button>
+                    <Button className={'h-14 w-full'} type={'submit'} title={'login button'}> Se Connecter</Button>
 
                     <div className={'w-full flex justify-center items-center relative'}>
                         <div className={'w-full h-[.3px] bg-gray-200'}></div>
